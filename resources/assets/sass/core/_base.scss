@@ -1,0 +1,100 @@
+body {
+	background-color: #fff;
+	line-height: 1.5;
+	padding-top: 52px;
+	@media (max-width: 430px) {
+		padding-top: 100px;
+	}
+}
+footer {
+	margin: 0 0 20px;
+	color: #B4B5B7;
+	font-size: $font-size-small;
+	p {
+		margin: 0;
+	}
+}
+nav {
+	background-color: #569A9D;
+	border-bottom: 1px solid #0C3220;
+	text-align: center;
+	padding: 15px 0;
+	font-size: $font-size-small;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9000;
+	opacity: .8;
+
+	ul {
+		margin: 0;
+	}
+	li {
+		color: #e0e0e0;
+    	padding-left: 10px;
+    	margin-bottom: 0;
+	}
+	a {
+		padding-right: 10px;
+		color: #fff;
+		&:hover {
+			color: #fff;
+		}
+	}
+	.buy a {
+		border-bottom: 2px solid $link-color;
+		padding-right: 0;
+		&:hover {
+			text-decoration: none;
+			border-bottom: 2px solid #fff;
+		}
+	}
+}
+
+h2 {
+	margin-bottom: 20px;
+}
+li {
+	margin-bottom: 10px;
+}
+
+.book-image {
+	margin-top: 40px;
+	padding: 10px;
+	text-align: center;
+	img {
+		max-width: 80%;
+	}
+}
+
+.mb {
+	margin-bottom: 20px;
+}
+.mb40, .secondary.mb40 {
+	margin-bottom: 40px;
+}
+.mb0, .secondary.mb0 {
+	margin-bottom: 0;
+}
+.m20 {
+	margin: 20px;
+}
+.secondary {
+	background-color: $secondary-bg-color;
+	border-top: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+	padding: 20px 0;
+	margin-bottom: 20px;
+}
+
+.authors {
+	&--title {
+		text-align: center;
+	}
+}
+.img-right {
+	margin-right: -10%; 
+	padding-left: 20px;
+	padding-bottom: 20px;
+}

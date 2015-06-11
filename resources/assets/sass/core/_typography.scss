@@ -1,0 +1,53 @@
+h1,h2,h3,h4,h5 {
+	font-family: $heading-font;
+}
+h2 {
+	font-weight: bold;
+}
+h3, p, li {
+	margin-bottom: 20px;
+}
+.cta {
+	background-color: #F7F7F8;
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 30px;
+	h1 {
+		font-weight: 300;
+		text-align: center;
+		margin: 50px 0;
+
+		@media (min-width: $screen-sm) {
+			margin: 100px 0;
+			font-size: floor(($font-size-base * 3.0));
+		}
+	}
+}
+h1.title {
+	text-align: center;	
+	font-weight: normal;
+	position: relative;
+	@media (min-width: $screen-sm) {
+		margin: 100px 0;
+		font-size: floor(($font-size-base * 3.2));
+		&:before {
+			position: absolute;
+			bottom: -32px;
+			left: 50%;
+			margin-left: -30px;
+			width: 60px;
+			height: 3px;
+			background: $link-color;
+			content: '';
+			//border-bottom: 2px solid $link-color;
+		}
+	}
+}
+
+.purchase-cta-btn {
+	text-align: center;
+	margin: 40px 0;
+}
+.alternate {
+	font-family: Georgia; 
+	font-style: italic;
+}
