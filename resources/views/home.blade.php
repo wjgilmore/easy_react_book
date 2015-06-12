@@ -45,7 +45,7 @@
 	<div class="col-md-11 col-md-offset-1">
 <br />
 <p>
-I'm working on the book full-time, and would love to solicit some early feedback from interested readers. Sign up for the book announcement mailing list (no spam, ever) and I'll send you the 39 page introduction and first chapter.
+I'm working on the book full-time, and would love to solicit some early feedback from interested readers. Sign up for the book announcement mailing list (no spam, ever) and I'll send you the 39 page introduction and first chapter in PDF format. Alternatively, feel free to read <a href="/book/intro">the Introduction</a> and <a href="/book/1">Chapter 1</a> online now!
 </p>
 
 <!-- Begin MailChimp Signup Form -->
