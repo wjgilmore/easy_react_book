@@ -1,4 +1,4 @@
 <ul class="main-nav list-inline">
-  <li><a href="/">Home</a> / </li>
-  <li><a href="/author">The Author</a></li>
+  <li><strong><a href="/">Easy React: Build Powerful Web Apps Using Modern JavaScript Technologies</a></strong> / </li>
+  <li><a href="/author">About the Author</a></li>
 </ul>

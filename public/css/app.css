@@ -5803,7 +5803,7 @@ footer {
     margin: 0; }
 
 nav {
-  background-color: #569A9D;
+  background-color: #2F1B24;
   border-bottom: 1px solid #0C3220;
   text-align: center;
   padding: 15px 0;
@@ -5839,8 +5839,7 @@ li {
   margin-bottom: 10px; }
 
 .book-image {
-  margin-top: 40px;
-  padding: 10px;
+  margin-top: 10px;
   text-align: center; }
   .book-image img {
     max-width: 80%; }
@@ -5878,7 +5877,7 @@ h1, h2, h3, h4, h5 {
 h2 {
   font-weight: bold; }
 
-h3, p, li {
+h3, p {
   margin-bottom: 20px; }
 
 .cta {
