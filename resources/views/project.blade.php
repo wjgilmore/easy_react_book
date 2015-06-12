@@ -1,16 +1,17 @@
 @extends('layout')
 
 @section('content')
-	<h1 class="title">About the VocabGiant Companion Project</h1>
+	<h1 class="title">About the Companion Project</h1>
 
 	<div class="container">
 		<div class="row authors">
-			<div class="col-md-12">
+		<div class="col-md-5">
+		<img src="/imgs/filter_terms.png" style="max-width: 90%;" />
+		</div>
+			<div class="col-md-7">
+			<h2>Introducing VocabGiant</h2>
 <p>
-I've always been fascinated with language and the various techniques associated with learning foreign languages in the most effective way possible. Having lived in Italy for several years I had the luxury of learning Italian the "easy way" (total immersion), however my experience over the years learning other languages has been far more difficult, although still fun. Regardless of your approach, you'll inescapably spend an enormous amount of time memorizing vocabulary until your understanding is so intimate that the intermediate process of translating from your native to the foreign language simply disappears. 
-</p>
-<p>
-Given my technical background, I've obviously experimented with a great deal of language learning apps over the years, and find several of them to be indispensable (Duolingo and Memrise, to name a few). However, none offer *exactly* the combination of features I'm looking for in such an app, and so like any self-respecting nerd I thought it would be fun to create my own. It's called VocabGiant, and we'll spend much of this book creating this app using React and other modern JavaScript technologies. Obviously we won't exhaustively recreate every VocabGiant feature, however we will devote time to exploring key React-related capabilities such as:
+I've experimented with a great deal of language learning apps over the years, and find several of them to be indispensable (Duolingo and Memrise, to name a few). However, none offer *exactly* the combination of features I'm looking for in such an app, and so like any self-respecting nerd I thought it would be fun to create my own. It's called VocabGiant, and we'll spend much of this book creating this app using React and other modern JavaScript technologies. Obviously we won't exhaustively recreate every VocabGiant feature, however we will devote time to exploring key React-related capabilities such as:
 </p>
 <ul>
 <li>User interface creation and management</li>
