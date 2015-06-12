@@ -11,7 +11,7 @@
 			<div class="col-md-7">
 			<h2>Introducing VocabGiant</h2>
 <p>
-I've experimented with a great deal of language learning apps over the years, and find several of them to be indispensable (Duolingo and Memrise, to name a few). However, none offer *exactly* the combination of features I'm looking for in such an app, and so like any self-respecting nerd I thought it would be fun to create my own. It's called VocabGiant, and we'll spend much of this book creating this app using React and other modern JavaScript technologies. Obviously we won't exhaustively recreate every VocabGiant feature, however we will devote time to exploring key React-related capabilities such as:
+I've experimented with a great deal of language learning apps over the years, and find several of them to be indispensable (Duolingo and Memrise, to name a few). However, none offer exactly the combination of features I'm looking for in such an app, and so like any self-respecting nerd I thought it would be fun to create my own. It's called VocabGiant, and we'll spend much of this book creating this app using React and other modern JavaScript technologies. Obviously we won't exhaustively recreate every VocabGiant feature, however we will devote time to exploring key React-related capabilities such as:
 </p>
 <ul>
 <li>User interface creation and management</li>
@@ -24,6 +24,13 @@ I've experimented with a great deal of language learning apps over the years, an
 <p>
 If anything, basing much of the instruction around a thematic project keeps the material practical and helps to frame the discussion within the greater goal of creating a working application.
 </p>
+
+<h3>Have a Cool Feature Idea?</h3>
+
+<p>
+I'll be making all of VocabGiant's source code available to readers once the book publishes, so if there is a particular feature you'd like to see implemented, please e-mail me at wj@wjgilmore.com.
+</p>
+
 			</div>
 		</div>
 	</div>
