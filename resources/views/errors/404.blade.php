@@ -14,5 +14,4 @@
         </div>
     </div>
 
-    @include('inc._purchase-box')
 @endsection
