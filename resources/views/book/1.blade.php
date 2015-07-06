@@ -15,19 +15,19 @@
 </strong>
 
 <h1 id="chapter-1.-introducing-react">Chapter 1. Introducing React</h1>
-<p>React is a JavaScript library intended to reduce the general level of insanity associated with displaying and managing data within large applications. Such responsibility goes well beyond merely presenting data; React is intended to dramatically reduce the complexity associated with building interactive applications consisting of data that changes over time by offering a straightforward solution for efficiently detecting these changes and updating the page accordingly.</p>
+<p>React is a JavaScript library intended to reduce the complexity associated with building interactive applications consisting of data that changes over time. It does so by presenting a straightforward solution for efficiently detecting these changes and updating the application accordingly.</p>
 <p>While there are certainly other solutions that offer similar capabilities (AngularJS and Ember come to mind), it's important to understand React is not a complete JavaScript framework in the sense one might consider AngularJS or Ember.js to be &quot;complete&quot;. React deals expressly with your application's presentation layer, and could care less about what you use to power the other aspects of your project. This limited scope is precisely what makes React relatively <em>easy to learn</em>, and in fact I guarantee by the end of this chapter you'll have a fairly solid grasp of React's key capabilities. An increasing number of well-known companies seem to agree, as not only do creators Facebook and Instagram use React for their applications, but so does Atlassian, Khan Academy, and Code Academy, to name a few.</p>
-<p>In this opening chapter we'll get acquainted with React fundamentals, beginning with installing the library and creating a simple React-driven project. We'll then repeatedly refactor this introductory example in order to introduce a laundry list of React features such as JSX (JavaScript Syntax Extension), composable components, and working with data using two very important React concepts known as props and state.</p>
+<p>In this opening chapter we'll get acquainted with React fundamentals, beginning with installing the library and creating a simple React-driven project. We'll then repeatedly refactor this introductory example in order to introduce a laundry list of React features such as JSX (JavaScript Syntax Extension), composable components, and two very important React concepts known as props and state.</p>
 <p>Let's kick things off by installing React and cloning a simple starter repository I've created to help you begin interacting with the library as quickly as possible.</p>
 <h2 id="installing-react-the-easy-way">Installing React the Easy Way</h2>
-<p>There are a couple of different ways in which you can install React, notably either by referencing the library via the Facebook CDN or installing it on the server side using a JavaScript package manager such as npm. I strongly suggest all readers (including you JavaScript gurus) just reference the CDN for the examples presented throughout the majority of this chapter, allowing you to focus exclusively on React syntax rather than potentially battle JavaScript workflow issues. In the next chapter you'll learn how to install and configure React on the server-side, I promise.</p>
+<p>There are a couple of different ways in which you can install React, notably either by referencing the library via the Facebook CDN or installing it on the server side using a JavaScript package manager such as npm. I strongly suggest all readers (including you JavaScript gurus) just reference the CDN for the examples found throughout the majority of this chapter, allowing you to focus exclusively on React syntax rather than potentially battle JavaScript workflow issues. In the next chapter you'll learn how to install and configure React within a more organized and manageable development environment.</p>
 <h3 id="installing-the-easy-react-starter-project">Installing the Easy React Starter Project</h3>
 <p>Because most of the examples found in this chapter involve executing React code on the client-side, you won't need to install and configure a web server at this time. Even so, because we'll be using cool technologies such as Node.js and Express later in the book, I nonetheless thought it made sense to serve these opening examples using a basic Node.js-based web server. Even if you don't have any prior Node.js experience you should be able to get started in less than five minutes.</p>
-<p> The components you create in this chapter will shall we say not be very  eye-appealing for the simple reason that React's approach to managing  integrated HTML and CSS is pretty much guaranteed to elicit heart  palpitations among seasoned web developers, and therefore I've devoted the  entirety of chapter 3 to the topic in order to not only explain how to  properly integrate HTML and CSS into your React components, but additionally  explain the reasoning behind the React team's radical departure from  convention. So for now, let's focus solely on React fundamentals, and I  promise we'll make things look cool real soon.</p>
-<p>For starters, you'll need to install Node.js. Although I discuss Node.js installation at length in Chapter 5, frankly the instructions are overkill because installation is a breeze no matter what your operating system. Head over to <a href="https://nodejs.org/">https://nodejs.org/</a> now and you'll be greeted with a large <code>INSTALL</code> button which you can press to download an operating system-specific Node.js installer, or if you're a sophisticated type and prefer to use package managers such as <a href="http://brew.sh/">Homebrew</a> on OS X, then consider installing Node.js that way.</p>
+<p>The components you create in this chapter will shall we say not be very eye-appealing for the simple reason that React's approach to managing integrated HTML and CSS is pretty much guaranteed to elicit heart palpitations among seasoned web developers, and therefore I've devoted the entirety of chapter 3 to the matter of CSS integration in order to not only explain how to properly integrate HTML and CSS into your React components, but additionally explain the reasoning behind the React team's radical departure from convention. So for now, let's focus solely on React fundamentals, and I promise we'll make things look cool real soon.</p>
+<p>For starters, you'll need to install Node.js. Although I discuss Node.js installation at length in chapter 5, frankly the instructions are overkill because installation is a breeze no matter what your operating system. Head over to <a href="https://nodejs.org/">https://nodejs.org/</a> now and you'll be greeted with a large <code>INSTALL</code> button which you can press to download an operating system-specific Node.js installer. Alternatively, if you're the sophisticated type, consider using a package manager such as OS X's <a href="http://brew.sh/">Homebrew</a>.</p>
 <p>Once installed, clone the Easy React Starter repository hosted over on my GitHub account:</p>
 <pre><code>$ git clone https://github.com/wjgilmore/easy_react_starter</code></pre>
-<p> Various examples presented throughout this chapter are associated  with different branches found in this repository, however this opening  example uses the <code>master</code> branch.</p>
+<p>Various examples presented throughout this chapter are associated with different branches found in this repository, however this opening example uses the <code>master</code> branch.</p>
 <p>Once cloned, enter the <code>easy_react_starter</code> directory and run the following command, which will install a few necessary Node packages used to power the server:</p>
 <pre><code>$ npm install</code></pre>
 <p>After this command completes execution, you'll find a new directory in the repository called <code>node_modules</code>. This contains the third-party packages which were just installed via the above command. Do you delete or otherwise mess with this directory. Next, run the following command to start the server:</p>
@@ -36,10 +36,11 @@ Server started: http://localhost:3000/</code></pre>
 <p>Open up a browser and navigate to the URL <a href="http://localhost:3000/test.html">http://localhost:3000/test.html</a>. If you see the message, &quot;It Worked!&quot;, congratulations you're running a local Node-powered web server. If you do not see this message, e-mail me and I'll help you troubleshoot the problem. Incidentally, you can stop the server by pressing <code>Ctrl-c</code>.</p>
 <p>In addition to the server, this repository contains a few starter files which we'll use to get acquainted with React fundamentals. Don't worry, after the first example you'll begin writing plenty of React code yourself, so get prepared to start banging on that keyboard!</p>
 <h3 id="using-the-facebook-cdn">Using the Facebook CDN</h3>
-<p>In the next chapter I'll show you how to install and manage the React library alongside other server-side JavaScript technologies (thus giving you the opportunity to run React code on both the client- and server-side). However sorting out the various project configuration details can take a bit of time and effort, and so we're going to instead get things quickly rolling in this chapter by linking directly to the library via the Facebook CDN.</p>
+<p>In the next chapter I'll show you how to install and manage the React library alongside other server-side JavaScript technologies. However sorting out the various project configuration details can take a bit of time and effort, and so we're going to instead get things quickly rolling in this chapter by linking directly to the library via the Facebook CDN.</p>
 <p>If you head over to the <a href="https://facebook.github.io/react/downloads.html">React downloads page</a> you'll find four different CDN-based versions, including two for production and two for development. There are two versions of each because an optional version contains an array of experimental add-ons. You can learn more about these add-ons <a href="https://facebook.github.io/react/docs/addons.html">in the React documentation</a>. For the time being we'll just use the standard development version minus the add-ons.</p>
+<p>At the time of this writing React 0.14 beta had just been announced, but is not yet listed on the React downloads page. Because we're living on the cutting edge, the repository instead uses the popular CDNJS service to import 0.14.</p>
 <p>When experimenting with and developing React-based applications you'll want to use the development build because it's uncompressed and includes inline documentation should you want to peruse the source code. Additionally, the development version will produce warnings highlighting common mistakes. By contrast, the production version is compressed for optimization reasons and suppresses error messages, so you'll want to swap out the development build for the production build when deploying to production.</p>
-<p>Perusing the React source code can be very insightful. For instance, open your browser and navigate to <a href="https://fb.me/react-0.13.2.js">https://fb.me/react-0.13.2.js</a>  and have a look through the code and corresponding comments.</p>
+<p>Perusing the React source code can be very insightful. For instance, navigate to <a href="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-beta1/react.js">the CDNJS hosted library</a> and have a look through the code and corresponding comments.</p>
 <p>Return to the starter repository, and open the file <code>index.html</code> found in the <code>public</code> directory. You'll find a standard HTML template containing two important lines, both of which I've highlighted:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
@@ -48,19 +49,19 @@ Server started: http://localhost:3000/</code></pre>
   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
   &lt;title&gt;Welcome to VocabGiant&lt;/title&gt;
   leanpub-start-insert
-  &lt;script src=&quot;https://fb.me/react-0.13.2.js&quot;&gt;&lt;/scrip
-  &lt;script src=&quot;https://fb.me/JSXTransformer-0.13.2.js&quot;&gt;&lt;/scrip
+  &lt;script src=&quot;.../libs/react/0.14.0-beta1/react.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;.../libs/react/0.14.0-beta1/JSXTransformer.js&quot;&gt;&lt;/script&gt;
   leanpub-end-insert
 &lt;/head&gt;
 &lt;body&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-<p>The first highlighted line references Facebook's CDN, loading a recent version of the React library into the browser. Doing so will give you access to React syntax, which we'll use to create a variety of examples throughout this chapter. The second highlighted line loads Facebook's <em>in-browser JSX transformer</em>. While not required, JSX is JavaScript extension that allows you to create React components using a succinct, convenient syntax. When running React applications in the browser, this transformer will detect the JSX and transform it into JavaScript syntax supported by the browser. Don't worry too much about JSX or transformation for now as I'll devote ample time to the topic later in this chapter.</p>
+<p>The first highlighted line references the CDNJS-hosted library (I've truncated the URL here due to reasons of space), loading a recent version of the React library into the browser. Doing so will give you access to React syntax, which we'll use to create a variety of examples throughout this chapter. The second highlighted line loads Facebook's <em>in-browser JSX transformer</em>. JSX is JavaScript extension that allows you to create React components using a succinct, convenient syntax. When running React applications in the browser, this transformer will detect the JSX and transform it into JavaScript syntax supported by the browser. Don't worry too much about JSX or transformation for now as I'll devote ample time to the topic later in this chapter.</p>
 <p>With React and the JSX transformer referenced it's time to create your first component!</p>
 <h2 id="creating-your-first-react-component">Creating Your First React Component</h2>
 <p>As I briefly mentioned in the book's introduction, one of React's most attractive features is the fact a React &quot;application&quot; can consist of hundreds of components containing thousands of lines of code, or just one component containing just a few scant lines of code. This means you can ease into the world of React without devoting untold amounts of time to research and configuration. Let's prove this assertion by adding a simple component to the starter application's web template.</p>
-<p>Return to <code>index.html</code> and add yet another <code>&lt;scrip</code> declaration which will make a simple React component available to the page:</p>
-<pre><code>&lt;script type=&quot;text/jsx&quot; src=&quot;js/app.js&quot;&gt;&lt;/scrip</code></pre>
+<p>Return to <code>index.html</code> and add yet another <code>&lt;script&gt;</code> declaration which will make a simple React component available to the page:</p>
+<pre><code>&lt;script type=&quot;text/jsx&quot; src=&quot;js/app.js&quot;&gt;&lt;/script&gt;</code></pre>
 <p>However, you'll want to insert it between the <code>&lt;body&gt;</code> tags, rather than within the <code>&lt;head&gt;</code>. The modified <code>index.html</code> file should look like this (newly added line emphasized):</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
@@ -68,16 +69,16 @@ Server started: http://localhost:3000/</code></pre>
   &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
   &lt;title&gt;Welcome to VocabGiant&lt;/title&gt;
-  &lt;script src=&quot;https://fb.me/react-0.13.2.js&quot;&gt;&lt;/scrip
-  &lt;script src=&quot;https://fb.me/JSXTransformer-0.13.2.js&quot;&gt;&lt;/scrip
+  &lt;script src=&quot;.../0.14.0-beta1/react.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;.../0.14.0-beta1/JSXTransformer.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
   leanpub-start-insert
-  &lt;script type=&quot;text/jsx&quot; src=&quot;js/app.js&quot;&gt;&lt;/scrip
+  &lt;script type=&quot;text/jsx&quot; src=&quot;js/app.js&quot;&gt;&lt;/script&gt;
   leanpub-end-insert
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-<p>If you're relatively new to JavaScript then you might be wondering why this <code>&lt;scrip</code> element wasn't placed alongside the others. It is because the JavaScript is going to execute as soon as it is made available to the browser, which presents a problem if the JavaScript is intended to interact with the page's Document Object Model (DOM). If the JavaScript executes before one or more of the required page elements are available, then logically the script isn't going to work as intended. There are more sophisticated ways in which JavaScript can be configured to not execute until after the page DOM is available, however for the moment we can get away with doing it in this manner.</p>
+<p>If you're relatively new to JavaScript then you might be wondering why this <code>&lt;script&gt;</code> element wasn't placed alongside the others. It is because the JavaScript is going to execute as soon as it is made available to the browser, which presents a problem if the JavaScript is intended to interact with the page's Document Object Model (DOM). If the JavaScript executes before one or more of the required page elements are available, then logically the script isn't going to work as intended. There are more sophisticated ways in which JavaScript can be configured to not execute until after the page DOM is available, however for the moment doing it in this manner is just fine.</p>
 <p>Additionally, note the use of the <code>text/jsx</code> MIME type. This is necessary because the JSX transformer library will use this MIME identifier as the cue for transforming the associated code into browser-supported JavaScript.</p>
 <p>With the example React component now available to the HTML template, return to your browser and navigate to <code>http://localhost:3000</code> (restarting the server by running <code>node server.js</code> if necessary), and you should see the message <code>Welcome to VocabGiant</code> in your browser (see the below screenshot).</p>
 <div class="figure">
@@ -158,7 +159,7 @@ React.render(&lt;Hello/&gt;, document.body);</code></pre>
 React.render(React.createElement(Hello, null), document.body);</code></pre>
 <p>Even at a glance it's clear the JSX code is more concise then the transformed result. As your React application grows in size, JSX will not only result in a significant reduction of code, but will also dramatically improve readability (more about this latter advantage in the next section.)</p>
 <p>Of course, repeatedly transforming the same JSX every time a page is rendered isn't particularly efficient, and in fact doing so in this fashion is really only recommended during this early exploratory phase. In the next chapter you'll learn how to precompile your JSX using server-side JavaScript tools.</p>
-<p> If you'd like to experiment with JSX syntax and view the transformed  JavaScript, check out Facebook's web-based <a href="https://facebook.github.io/react/jsx-compiler.html">JSX Compiler</a>.</p>
+<p>If you'd like to experiment with JSX syntax and view the transformed JavaScript, check out Facebook's web-based <a href="https://facebook.github.io/react/jsx-compiler.html">JSX Compiler</a>.</p>
 <h2 id="creating-component-hierarchies">Creating Component Hierarchies</h2>
 <p>Of course, the typical React application is going to consist of much more than a single component, and you certainly won't be using this powerful technology to output static content such as that demonstrated in the above examples. In a real-world application you'll want to create reusable components, some of which contain dynamic data, which can then be embedded within one another to create a <em>component hierarchy</em>. The React team refers to this key feature as <em>composability</em>. To understand the utility of using React to assemble component trees, consider the following simplified version of a typical VocabGiant screen:</p>
 <div class="figure">
@@ -169,7 +170,7 @@ React.render(React.createElement(Hello, null), document.body);</code></pre>
 <pre><code>var ListItem = React.createClass({
   render: function() {
     return (
-        &lt;lList Item&lt;/l
+        &lt;li&gt;List Item&lt;/li&gt;
     );
   }
 });</code></pre>
@@ -194,7 +195,7 @@ React.render(&lt;List /&gt;, document.body);</code></pre>
 <div class="figure">
 <img src="images/01/list_items.png" alt="Nesting List Items" /><p class="caption">Nesting List Items</p>
 </div>
-<p> JavaScript police: Yes, I know libraries such as Underscore  offer useful syntax shortcuts such as <code>_.range</code>. For the moment  let's stick to plain old JavaScript.</p>
+<p>JavaScript police: Yes, I know libraries such as Underscore offer useful syntax shortcuts such as <code>_.range</code>. For the moment let's stick to plain old JavaScript.</p>
 <p>Keep in mind at this point my only goal is to demonstrate component hierarchies; all we are doing is outputting static list items. Logically in a real application you'll want to populate those list items with dynamic data. I'll show you how to do this in just a moment.</p>
 <h3 id="introducing-the-key-property">Introducing the key Property</h3>
 <p>If you're running these examples with the browser console open (and I suggest you do), you probably noticed the following warning:</p>
@@ -203,7 +204,7 @@ unique &quot;key&quot; prop. Check the render method of List.</code></pre>
 <p>React requires that each child in an array include a unique key which React will then use for tasks such as subsequent filtering or reordering. Although we'll dive into the matter of passing dynamic data into components later in the chapter, it's worth providing an example now to remedy the warning:</p>
 <pre><code>var List = React.createClass({
   render: function(){
-    var listItems = Array.apply(null, Array(3)).map(function(item){
+    var listItems = [1,2,3].map(function(item){
       leanpub-start-insert
       return &lt;ListItem key={item} /&gt;;
       leanpub-end-insert
@@ -217,12 +218,12 @@ unique &quot;key&quot; prop. Check the render method of List.</code></pre>
     );
   }
 });</code></pre>
-<p>Although in this example I'm taking the easy way out and using the array values as component keys, you'll want to ensure your keys are always constant and unique otherwise you'll wind up with inconsistent behavior and performance issues.</p>
+<p>Although in this example I'm taking the easy way out and using the array values as component keys, you'll want to ensure your keys are always constant and unique otherwise you'll wind up with inconsistent behavior and performance issues due to React's inability to properly keep track of the DOM state.</p>
 <p>In the following chapters you'll encounter many more examples of composable components, however hopefully this simplified example is suffice to get your mind racing regarding what's possible. We'll return to this example repeatedly throughout the remainder of the chapter, repeatedly refactoring it as new React features are introduced.</p>
 <h2 id="introducing-props-and-state">Introducing Props and State</h2>
 <p>Your project's React components will typically be populated with data retrieved from a dynamic data source such as a database. But how is this data passed into the component? How does React keep track of this data and ensure that it is seamlessly updated should circumstances dictate it due to for instance a user-initiated event or server request? How does React ensure this data's life cycle is managed in such a way so as to prevent obscure bugs from arising due to inconspicuous modification?</p>
 <p>In this section we'll talk about how React answers these questions by supporting two distinct types of data, known as <em>props</em> (shorthand for <em>properties</em>) and <em>state</em>. The difference between these two concepts are subtle yet important, so be sure to read this section carefully and e-mail me with questions.</p>
-<p> I find the choice of terms <em>props</em> and <em>state</em> to be incredibly awkward  and confusing to beginners. Of course, in order to avoid further confusion  I'm going to refer to them as defined by the team, however I'll use the terms  &quot;props bag&quot; and &quot;state bag&quot; from here on out because that is a better  descriptor of the purpose these structures serve, which is to provide the  developer with a convenient and conventional solution for passing  domain-specific, arbitrary data of different types around your React  application. In the case of React, a &quot;bag&quot; is just a colloquialism for an  object which you'll use to house this arbitrary data, so if you'd like just  mentally substitute &quot;bag&quot; for &quot;object&quot;.</p>
+<p>I find the choice of terms <em>props</em> and <em>state</em> to be awkward and confusing. In order to avoid further confusion I'm going to refer to them as defined by the team, however I'll use the terms &quot;props bag&quot; and &quot;state bag&quot; from here on out because that is a better descriptor of the purpose these structures serve, which is to provide the developer with a convenient and conventional solution for passing domain-specific, arbitrary data of different types around your React application. In the case of React, a &quot;bag&quot; is just a colloquialism for an object which you'll use to house this arbitrary data, so if you'd like just mentally substitute &quot;bag&quot; for &quot;object&quot;.</p>
 <h3 id="introducing-the-props-bag">Introducing the Props Bag</h3>
 <p>React attempts to eliminate much of the confusion and chaos typically associated with keeping a user interface synchronized with data changes by enforcing <em>one-way data binding</em> in which data flows from a parent to child component. The parent is responsible for managing the data life cycle, and the child responsible for the data's display. In order to enforce this convention, once data is passed from parent to child it should be treated as <em>immutable</em>. React's immutable data is managed within the <em>props</em> bag.</p>
 <p>Of course, this data might eventually change, but that decision will be made by a <em>stateful</em> parent component which will contain whatever logic is required to implement the UI update. Your application should generally consist of many stateless components, and relatively few stateful components. For the moment let's focus on the child (<em>stateless</em>) components and the <code>props</code> bag used to pass this data along.</p>
@@ -232,12 +233,12 @@ unique &quot;key&quot; prop. Check the render method of List.</code></pre>
 <pre><code>var ListItem = React.createClass({
   render: function() {
     return (
-        &lt;l{this.props.word}&lt;/l
+        &lt;li&gt;{this.props.word}&lt;/li&gt;
     );
   }
 });</code></pre>
 <p>The curly brackets tell React to interpolate whatever is found inside, which in this case is the <code>this.props</code> object's <code>chore</code> property.</p>
-<p>Let's consider a somewhat more involved example involving passing <code>props</code> data into a component, revising the previous example to pass an array of chores into the list. I've just showed you what an example <code>&lt;ListItem&gt;</code> component might look like, so let's create a parent <code>&lt;Lis</code> component and pass an array of words into the child <code>&lt;ListItem&gt;</code> component:</p>
+<p>Let's consider a somewhat more involved example involving passing <code>props</code> data into a component, revising the previous example to pass an array of chores into the list. I've just showed you what an example <code>&lt;ListItem&gt;</code> component might look like, so let's create a parent <code>&lt;List&gt;</code> component and pass an array of words into the child <code>&lt;ListItem&gt;</code> component:</p>
 <pre><code>var List = React.createClass({
   render: function(){
     var words = [&#39;ciao&#39;, &#39;giorno&#39;, &#39;mare&#39;]
@@ -257,9 +258,9 @@ unique &quot;key&quot; prop. Check the render method of List.</code></pre>
 <div class="figure">
 <img src="images/01/list_items_words.png" alt="Presenting Vocabulary Words" /><p class="caption">Presenting Vocabulary Words</p>
 </div>
-<p>While it's possible to populate a React-driven UI with solely <code>props</code>-driven data, frankly you're not going to create a particularly compelling application. It's when you use both <code>props</code> and the other type of React data, known as <code>state</code>, in conjunction with one another that things really begin to get exciting.</p>
+<p>While it's possible to populate a React-driven UI with solely <code>props</code>-driven data, in doing so you're not going to create a particularly compelling application. It's when you use both <code>props</code> in conjunction with the other type of React data, known as <code>state</code> that things really begin to get exciting.</p>
 <h3 id="introducing-the-state-bag">Introducing the State Bag</h3>
-<p>SPAs are so alluring because they present an opportunity to create incredibly interactive user experiences. Historically though, synchronizing the interface, user interactions, and underlying data store has been a difficult and often error prone process. React removes much of the confusion through its enforcement of <em>one-way data binding</em>, or requiring parent components to be responsible for pushing data <em>down</em> the component tree to their children, and requiring children to send events <em>up</em> the component tree to their parents. This idea is so central to understanding React that I suggest taking a moment to conceptually visualize it before moving on.</p>
+<p>Synchronizing an application's interface, user interactions, and underlying data stores has historically been a difficult and often error prone process. React removes much of the confusion through its enforcement of <em>one-way data binding</em>, or requiring parent components to be responsible for pushing data <em>down</em> the component tree to their children, and requiring children to send events <em>up</em> the component tree to their parents. This idea is so central to understanding React that I suggest taking a moment to conceptually visualize it before moving on.</p>
 <p>Data that may change over time must be identified as <em>state</em>, meaning you'll pass it along using the state bag. In doing so, React will keep track of this data in a manner that allows it to quickly identify and replace it should circumstances warrant (due to among other things a user-initiated event, a server request, or the lapse of time).</p>
 <p>So what useful state-related feature might we integrate alongside the list of vocabulary terms? How about a search field that allows users to quickly look up a particular term? By &quot;quickly&quot;, I'm referring to a real-time search experience in which the default list of terms appears to dynamically update the moment a user begins to type in the search field. The search field is an example of something you would represent using state because a change in value will necessitate an update of other parts of the page, namely which terms should be displayed given the provided filter string. Let's refactor the code found in the starter project to add a simplified version (stylistically, at least) of the search filter presented in the following screenshot.</p>
 <div class="figure">
@@ -268,7 +269,7 @@ unique &quot;key&quot; prop. Check the render method of List.</code></pre>
 <p>Admittedly this example is a tad more involved than what you've seen thus far in the chapter. However this just presents an opportunity to introduce new React features! So let's start by creating an isolated version of the search form which will really get you excited about using state.</p>
 <h4 id="reacting-to-user-input">Reacting to User Input</h4>
 <p>Responding to user input is a prime example involving the use of state in your React application. In the context of the larger search filter example we will build a solution for passing user input into the logic used to filter the vocabulary list, however let's ease into this by focusing exclusively on <em>how</em> React is able to detect and respond to user input by assembling an isolated example.</p>
-<p> Follow along with the code in this section by checking out the  <code>user_input</code> branch of the <code>easy_react_starter</code> repository.</p>
+<p>Follow along with the code in this section by checking out the <code>user_input</code> branch of the <code>easy_react_starter</code> repository.</p>
 <p>Specifically, we'll create an interface which detects user input and echoes that input in real-time to another part of the DOM. The below screenshot illustrates this behavior. I've typed in <code>i love vocabulary</code>, and that string is reflected below the text field in another <code>div</code>. Obviously this is going to be much more impactful if you checkout the <code>user_input</code> branch as described above and run the example, so consider doing that before reading any further.</p>
 <div class="figure">
 <img src="images/01/user_input.png" alt="Echoing User Input" /><p class="caption">Echoing User Input</p>
@@ -277,7 +278,7 @@ unique &quot;key&quot; prop. Check the render method of List.</code></pre>
 <pre><code>var SearchBox = React.createClass({
     handleChange: function() {
       this.props.onUserInput(
-          this.refs.filterTerms.getDOMNode().value
+          this.refs.filterTerms.value
       );
     },
     render: function() {
@@ -330,19 +331,19 @@ React.render(&lt;Home /&gt;, document.body);</code></pre>
 <li><code>handleUserInput</code>: In this stateful parent component you need to identify what exactly should happen when the data is defined as being stateful. In this case we want to provide realtime filtering of the list of chores according to the supplied filter value, and so want to update the stateful <code>filterTerm</code> attribute to whatever is being passed into the function (via the child). You'll update the state using the <code>setState</code> method.</li>
 <li><code>render</code>: The <code>render</code> function performs the usual task of rendering the desired components. Because this is a parent component you can see we're rendering the child <code>SearchBox</code> component. Note how both the <code>filterTerm</code> state and the <code>handleUserInput</code> function are passed into the component as properties. Additionally we're outputting the stateful <code>filterTerm</code> value using the <code>this.state</code> bag.</li>
 </ul>
-<p>With these two components in place, you're able to recreate the functionality depicted in the screenshot!</p>
+<p>With these two components in place, you're able to recreate the functionality depicted in the previous screenshot!</p>
 <h4 id="creating-the-vocabulary-filter">Creating the Vocabulary Filter</h4>
 <p>Now that you understand how React can listen for and respond to user input, let's expand upon this concept and implement the vocabulary filter.</p>
-<p> Follow along with the code in this section by checking out the  <code>vocab_filter</code> branch of the <code>easy_react_starter</code> repository.</p>
+<p>Follow along with the code in this section by checking out the <code>vocab_filter</code> branch of the <code>easy_react_starter</code> repository.</p>
 <p>Let's begin with the component used to present each list item. This is really nothing new however for completeness' sake I'll include the component here:</p>
 <pre><code>var ListItem = React.createClass({
   render: function() {
     return (
-        &lt;l{this.props.term}&lt;/l
+        &lt;li&gt;{this.props.term}&lt;/li&gt;
     );
   }
 });</code></pre>
-<p>We're going to iterate over a vocabulary list, passing each term into the <code>ListItem</code> component in order to render another <code>&lt;l</code> element (via the <code>&lt;ListItem&gt;</code> component). Let's have a look at the component used to iterate over that list:</p>
+<p>We're going to iterate over a vocabulary list, passing each term into the <code>ListItem</code> component in order to render another <code>&lt;li&gt;</code> element (via the <code>&lt;ListItem&gt;</code> component). Let's have a look at the component used to iterate over that list:</p>
 <pre><code>var ListItems = React.createClass({
 
   render: function(){
@@ -403,7 +404,7 @@ React.render(&lt;Home terms={terms} /&gt;, document.body);</code></pre>
 <p>Before moving on I suggest spending some time creating other components and experimenting with passing events <em>upwards</em> to parent components and <code>props</code> <em>downwards</em> from parent components to children components.</p>
 <h2 id="reading-and-rendering-json-data">Reading and Rendering JSON Data</h2>
 <p>Although you'll learn all about incorporating a database and other types of data into your React applications later in the book, I've no doubt many of you are very interested to know how to read and render JSON and so thought we'd conclude this chapter with a brief introduction to the topic.</p>
-<p> Follow along with the code in this section by checking out the  <code>json_loader</code> branch of the <code>easy_react_starter</code> repository.</p>
+<p>Follow along with the code in this section by checking out the <code>json_loader</code> branch of the <code>easy_react_starter</code> repository.</p>
 <p>If you have a look inside the repository's <code>json_loader</code> branch you'll find a JSON file named <code>vocabulary.json</code>. It contains a list of Italian vocabulary terms and their English counterparts. Here's a snippet:</p>
 <pre><code>{
   &quot;words&quot;: [
@@ -425,7 +426,7 @@ React.render(&lt;Home terms={terms} /&gt;, document.body);</code></pre>
 <pre><code>var ListItem = React.createClass({
   render: function() {
     return (
-     &lt;l{this.props.item.origin}&lt;/l
+     &lt;li&gt;{this.props.item.origin}&lt;/li&gt;
     );
   }
 });
@@ -478,8 +479,7 @@ React.render(&lt;Home url=&quot;http://localhost:3000/vocabulary.json&quot; /&gt
 <p>Like the previous example, you'll find a <code>getInitialState</code> function responsible for initializing an attribute named <code>vocabulary</code>. Next, you'll find a new function named <code>componentDidMount</code>. This is a special React function which will execute only once, after the initial rendering has completed. In this case, we're using <code>componentDidMount</code> to retrieve the JSON file (using jQuery's <code>$.get</code> method). Next, the <code>vocabulary</code> state attribute will be set to the transformed JSON (now available as an array). It's done after confirming the component is indeed rendered, because conceivably it could have been unmounted due to for instance a network timeout. Finally, <code>vocabulary</code> is passed into the <code>ListItems</code> component and rendered accordingly.</p>
 <p>As you can see, it's incredibly easy to retrieve and render JSON using React! This is logically a topic we'll refer to repeatedly throughout the book, so stay tuned.</p>
 <h2 id="summary">Summary</h2>
-<p>Wow, we've only completed a single chapter and you've already managed to use React to create an interface containing several components, capable of responding to user input, offering a simple real-time filtering feature, and rendering data retrieved from a JSON file! Granted the interface isn't very eye-appealing however in the soon enough you'll learn how to spruce it up.</p>
-
+<p>Wow, we've only completed a single chapter and you've already managed to use React to create an interface containing several components, capable of responding to user input, offering a simple real-time filtering feature, and rendering data retrieved from a JSON file! Granted the interface isn't very eye-appealing however soon enough you'll learn how to spruce it up. However, before jumping into CSS- and layout-related matters it is crucial to spend some time configuring a proper application development environment and workflow. We'll spend the next chapter doing exactly that!</p>
 
 
 
