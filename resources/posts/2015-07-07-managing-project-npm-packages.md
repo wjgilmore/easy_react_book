@@ -6,6 +6,8 @@ author: W. Jason Gilmore
 
 Although there are certainly a number of npm packages worthy of global installation (Gulp comes to mind), you'll often want to maintain a project-specific set of packages for versioning purposes. To do so you'll need to install packages *locally*. If you're relatively new to the world of npm then how this is accomplished might not be so obvious, however after reviewing a few examples you'll find it is quite easy.
 
+<!-- more -->
+
 To install a package locally, meaning it will reside in your project's `node_modules` directory and be listed in the `package.json` manifest, you'll execute `npm install` with the `--save` option:
 
 	$ npm install react-dom --save

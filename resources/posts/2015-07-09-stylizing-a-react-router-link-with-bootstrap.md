@@ -6,6 +6,8 @@ author: W. Jason Gilmore
 
 Easy React's [VocabGiant sample project](/project) uses the Bootstrap framework to ameliorate my questionable design skills. The app incorporates Bootstrap styling throughout, including for stylizing button bars such as that presented in the below prototype screenshot.
 
+<!-- more -->
+
 <img src="/imgs/blog/bootstrap_buttons_link.png" />
 
 The app uses [React Router](https://rackt.github.io/react-router/) for all routing-related matters, meaning [Link](https://rackt.github.io/react-router/#Link) is used for navigating the site. The buttons in the screenshot are actually stylized `<Link>` elements, as demonstrated here:
