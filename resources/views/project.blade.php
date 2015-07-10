@@ -25,9 +25,6 @@ I've experimented with a great deal of language learning apps over the years, an
 If anything, basing much of the instruction around a thematic project keeps the material practical and helps to frame the discussion within the greater goal of creating a working application.
 </p>
 
-<p>
-Hi Andreas
-</p>
 
 <h3>Have a Cool Feature Idea?</h3>
 
