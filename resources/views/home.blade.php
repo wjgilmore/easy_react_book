@@ -33,8 +33,6 @@
 <li>Much, much more</li>
 </ul>
 
-		
-
 				</div>
 				<div class="col-md-4 book-image">
 					<img src="/imgs/book-large-web.jpg" alt="" style="border:1px solid black;">

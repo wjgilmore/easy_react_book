@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-	<h1 class="title">About Jason Gilmore</h1>
+	<h1 class="title">About W. Jason Gilmore</h1>
 
 	<div class="container">
 		<div class="row authors">

@@ -20,6 +20,9 @@ $app->get('/toc/', function() use ($app) {
     return view('toc');
 });
 
+$app->get('/buy/', function() use ($app) {
+    return view('buy');
+});
 
 $app->get('blog/', 'App\Http\Controllers\BlogController@index');
 $app->get('blog/{uri}', 'App\Http\Controllers\BlogController@details');
