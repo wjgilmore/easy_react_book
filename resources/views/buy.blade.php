@@ -28,6 +28,14 @@ As with all of my popular books, your purchase is protected by a 100% money back
 </a>
 </p>
 
+<p>
+Existing customers: If you received the notification e-mail about purchasing the book on Leanpub at a discount, I mistakenly just included the code but not the complete URL. Append the code you received to the following URL (sorry about the confusion):
+</p>
+
+<p>
+http://leanpub.com/easyreact/c/
+</p>
+
 <h3>Have a Question?</h3>
 
 <p>
