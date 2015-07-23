@@ -10,7 +10,7 @@ The [Easy React companion project](/project) includes a quiz feature which gives
 
 The below screenshot presents an early version of the UI, including the input field.
 
-![The VocabGiant quiz UI](/imgs/vocabgiant_quiz.png)
+![The VocabGiant quiz UI](/imgs/blog/vocabgiant_quiz.png)
 
 To ensure the input field is placed into focus each time a new quiz term is presented, you'll need to retrieve the field's DOM node via React's `this.refs` property, and then call the `focus()` method. Further, you need to do so *in the `componentDidMount` method. Here is an abbreviated example of the `QuizItem` component demonstrating this approach:
 
