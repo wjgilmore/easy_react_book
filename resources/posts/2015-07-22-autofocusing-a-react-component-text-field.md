@@ -1,6 +1,6 @@
 ---
 title: "Autofocusing a React Component Text Field"
-date: 2015-07-15 13:20
+date: 2015-07-22 14:20
 author: W. Jason Gilmore
 ---
 

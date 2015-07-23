@@ -1,6 +1,6 @@
 ---
 title: "Seeding a Heroku Application's MongoLab Mongo Database"
-date: 2015-07-15 13:20
+date: 2015-07-12 13:20
 author: W. Jason Gilmore
 ---
 
